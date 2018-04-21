@@ -1,0 +1,18 @@
+{
+  "name": "clinote",
+  "version": "1.0.0",
+  "description": "Command line note taking app for productivity",
+  "main": "src/index.js",
+  "author": "Chandan Rana (https://github.com/rc-chandan)",
+  "contributors": [
+    "Chandan Rana (https://twitter.com/rc_chandan316)"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "cnote": "node src/index.js"
+  },
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "mkdirp": "^0.5.1"
+  }
+}
