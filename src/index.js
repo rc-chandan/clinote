@@ -9,5 +9,5 @@ const BANNER_TEXT =
 
 console.log(BANNER_TEXT);
 
-const clinote = require('./core');
-clinote.initiateSession();
+const app = require('./app');
+app.initiateSession();
