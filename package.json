@@ -4,13 +4,17 @@
   "description": "Command line note taking app for productivity",
   "main": "src/index.js",
   "author": "Chandan Rana (https://github.com/rc-chandan)",
-  "contributors": [
-    "Chandan Rana (https://twitter.com/rc_chandan316)"
-  ],
+  "contributors": ["Chandan Rana (https://twitter.com/rc_chandan316)"],
   "license": "MIT",
   "scripts": {
-    "build": "tsc --watch",
-    "cnote": "node build/index.js"
+    "build":
+      "npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc",
+    "clean": "rimraf build",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "precommit": "npm run test",
+    "test": "npm run build",
+    "watch": "npm run build -- --watch",
+    "watch:test": "npm run test -- --watch"
   },
   "dependencies": {
     "inquirer": "^5.2.0",
@@ -24,6 +28,7 @@
     "@types/inquirer": "0.0.41",
     "@types/lodash": "^4.14.107",
     "@types/node": "^9.6.6",
+    "husky": "^0.14.3",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.8.0",
     "typescript": "^2.8.3"
