@@ -1,9 +1,9 @@
-import * as os from "os";
+import * as os from 'os';
 
-import * as databaseUtil from "../database/index";
-import EVENTS from "../events/eventTypes";
-import emitter from "../events/index";
-import { checkOSSupport, Config, getConfiguration } from "../utils/index";
+import * as databaseUtil from '../database/index';
+import eventTypes from '../events/eventTypes';
+import events from '../events';
+import { checkOSSupport, getConfiguration, IConfig } from '../utils/index';
 
 export async function initiateSession() {
   checkOSSupport();
@@ -12,9 +12,9 @@ export async function initiateSession() {
   startApp(config);
 }
 
-function startApp({ dbFilePath }: Config) {
+function startApp({ dbFilePath }: IConfig) {
   databaseUtil.connect(dbFilePath);
-  emitter.emit(EVENTS.GET_ALL_NOTES);
+  events.emit(eventTypes.GET_ALL_NOTES);
   // cliUtil.attachEventListners(eventListners)
 }
 

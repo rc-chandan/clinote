@@ -1,23 +1,23 @@
 export function getAllNotesForUser(uid: number): INote[] {
-    return [];
+  return [];
 }
 
 export function getNoteById(noteId: string): INote {
-    return {};
+  return {};
 }
 
 export function createNote(note: INote): INote {
-    return {};
+  return {};
 }
 
 export function updateNote(note: INote): INote {
-    return {};
+  return {};
 }
 
 export function deleteNote(note: INote): INote {
-    return {};
+  return {};
 }
 
 export function connect(dbFilePath: string): Connection {
-    return {};
+  return {};
 }
