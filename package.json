@@ -9,12 +9,21 @@
   ],
   "license": "MIT",
   "scripts": {
-    "cnote": "node src/index.js"
+    "build": "tsc --watch",
+    "cnote": "node build/index.js"
   },
   "dependencies": {
     "inquirer": "^5.2.0",
+    "lodash": "^4.17.5",
     "mkdirp-promise": "^5.0.1",
     "sequelize": "^4.37.6",
     "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.36",
+    "@types/inquirer": "0.0.41",
+    "@types/lodash": "^4.14.107",
+    "@types/node": "^9.6.6",
+    "typescript": "^2.8.3"
   }
 }

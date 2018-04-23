@@ -1,0 +1,14 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "target": "es5",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

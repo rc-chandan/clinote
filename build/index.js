@@ -1,15 +1,12 @@
-// @ts-check
-
-const BANNER_TEXT =
-    " ██████╗██╗     ██╗███╗   ██╗ ██████╗ ████████╗███████╗ \n" +
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var index_1 = require("./app/index");
+var BANNER_TEXT = " ██████╗██╗     ██╗███╗   ██╗ ██████╗ ████████╗███████╗ \n" +
     "██╔════╝██║     ██║████╗  ██║██╔═══██╗╚══██╔══╝██╔════╝\n" +
     "██║     ██║     ██║██╔██╗ ██║██║   ██║   ██║   █████╗  \n" +
     "██║     ██║     ██║██║╚██╗██║██║   ██║   ██║   ██╔══╝  \n" +
     "╚██████╗███████╗██║██║ ╚████║╚██████╔╝   ██║   ███████╗\n" +
     " ╚═════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚══════╝\n" +
     "(v0.0.1) Commandline note taking app";
-
 console.log(BANNER_TEXT);
-
-const app = require('./app');
-app.initiateSession();
+index_1.initiateSession();

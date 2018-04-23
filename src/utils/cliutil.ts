@@ -1,25 +1,30 @@
-// @ts-check
+import * as inquirer from 'inquirer';
 
-const inquirer = require('inquirer');
 const prompt = inquirer.createPromptModule();
+
+type Question = {
+    type: string,
+    name: string,
+    message: string,
+};
 
 /**
  * @public
  * Gets encryption config from user on first application run
  */
-async function getEncryptionDetails() {
-    const questionEncryption = {
+export async function getEncryptionDetails() {
+    const questionEncryption: Question = {
         type: 'confirm',
         name: 'questionEncryption',
         message: 'Do you want to enable encryption',
     };
-    const questionPassphrase = {
+    const questionPassphrase: Question = {
         type: 'password',
         name: 'questionPassphrase',
         message: 'Enter passphrase: '
     }
-    const encryptionRequired = await prompt(questionEncryption);
-    let passphrase;
+    const encryptionRequired: any = await prompt(questionEncryption);
+    let passphrase: any;
     if(encryptionRequired.questionEncryption)
         passphrase = await prompt(questionPassphrase);
     
@@ -27,8 +32,4 @@ async function getEncryptionDetails() {
         encrypt: encryptionRequired.questionEncryption,
         passphrase: passphrase.questionPassphrase
     };
-}
-
-module.exports = {
-    getEncryptionDetails
 }

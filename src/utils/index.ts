@@ -1,14 +1,19 @@
-// @ts-check
-
-const os = require('os');
-const path = require('path');
-const fs = require('fs');
+import * as os from 'os';
+import * as path from 'path';
+import * as fs from 'fs';
 const mkdirp = require('mkdirp-promise');
 
-const { SUPPORTED_OS, APPLICATION_NAME } = require('../constants');
-const { getEncryptionDetails } = require('./cliutil');
+import { APPLICATION_NAME, SUPPORTED_OS } from '../constants';
+import { getEncryptionDetails } from './cliutil';
 
-async function createCofigForUser(uid, configFile) {
+export interface Config {
+    uid: number,
+    encrypt: boolean,
+    passphrase: string,
+    dbFilePath: string,
+};
+
+async function createCofigForUser(uid: number, configFile: string): Promise<Config> {
     const { encrypt, passphrase } = await getEncryptionDetails()
     const configFileDir = path.dirname(configFile);
     const dbFilePath = `${configFileDir}/notes_${uid}.db`;
@@ -19,12 +24,12 @@ async function createCofigForUser(uid, configFile) {
     return configObj;
 }
 
-function checkOSSupport() {
-    if(SUPPORTED_OS.includes(os.type())) return;   
+export function checkOSSupport(): void {
+    if(SUPPORTED_OS.indexOf(os.type()) !== -1) return;   
     console.error(`${os.type()} is not supported by ${APPLICATION_NAME}, supported OS list: ${SUPPORTED_OS}`);
 }
 
-async function getConfiguration(uid, homedir) {
+export async function getConfiguration(uid: number, homedir: string): Promise<Config> {
     const configFile = `${homedir}/.${APPLICATION_NAME}/${uid}/config.json`;
     let configJson;
     if(!fs.existsSync(configFile)) {
@@ -33,9 +38,4 @@ async function getConfiguration(uid, homedir) {
     }
     configJson = JSON.parse(fs.readFileSync(configFile, {encoding: 'utf8'}));
     return configJson;
-}
-
-module.exports = {
-    checkOSSupport,
-    getConfiguration
 }
