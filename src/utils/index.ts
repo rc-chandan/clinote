@@ -1,10 +1,10 @@
-import * as os from 'os';
-import * as path from 'path';
-import * as fs from 'fs';
-const mkdirp = require('mkdirp-promise');
+import * as os from "os";
+import * as path from "path";
+import * as fs from "fs";
+const mkdirp = require("mkdirp-promise");
 
-import { APPLICATION_NAME, SUPPORTED_OS } from '../constants';
-import { getEncryptionDetails } from './cliutil';
+import { APPLICATION_NAME, SUPPORTED_OS } from "../constants";
+import { getEncryptionDetails } from "./cliutil";
 
 export interface Config {
     uid: number,
@@ -20,7 +20,7 @@ async function createCofigForUser(uid: number, configFile: string): Promise<Conf
     await mkdirp(configFileDir);
     fs.writeFileSync(dbFilePath, `${APPLICATION_NAME} database file`);
     const configObj = { uid, encrypt, passphrase, dbFilePath };
-    fs.writeFileSync(configFile, JSON.stringify(configObj), {encoding: 'utf8'});
+    fs.writeFileSync(configFile, JSON.stringify(configObj), {encoding: "utf8"});
     return configObj;
 }
 
@@ -36,6 +36,6 @@ export async function getConfiguration(uid: number, homedir: string): Promise<Co
         configJson = await createCofigForUser(uid, configFile);
         console.log(`${APPLICATION_NAME} configurations saved :)`);
     }
-    configJson = JSON.parse(fs.readFileSync(configFile, {encoding: 'utf8'}));
+    configJson = JSON.parse(fs.readFileSync(configFile, {encoding: "utf8"}));
     return configJson;
 }

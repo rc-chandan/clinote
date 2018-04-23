@@ -1,4 +1,4 @@
-import * as inquirer from 'inquirer';
+import * as inquirer from "inquirer";
 
 const prompt = inquirer.createPromptModule();
 
@@ -14,14 +14,14 @@ type Question = {
  */
 export async function getEncryptionDetails() {
     const questionEncryption: Question = {
-        type: 'confirm',
-        name: 'questionEncryption',
-        message: 'Do you want to enable encryption',
+        type: "confirm",
+        name: "questionEncryption",
+        message: "Do you want to enable encryption",
     };
     const questionPassphrase: Question = {
-        type: 'password',
-        name: 'questionPassphrase',
-        message: 'Enter passphrase: '
+        type: "password",
+        name: "questionPassphrase",
+        message: "Enter passphrase: "
     }
     const encryptionRequired: any = await prompt(questionEncryption);
     let passphrase: any;

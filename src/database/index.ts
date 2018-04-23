@@ -1,23 +1,23 @@
-export function getAllNotesForUser(uid: number) {
-
+export function getAllNotesForUser(uid: number): INote[] {
+    return [];
 }
 
-export function getNoteById(noteId: string) {
-
+export function getNoteById(noteId: string): INote {
+    return {};
 }
 
-export function createNote(note: Note) {
-
+export function createNote(note: INote): INote {
+    return {};
 }
 
-export function updateNote(note: Note) {
-
+export function updateNote(note: INote): INote {
+    return {};
 }
 
-export function deleteNote(note: Note) {
-
+export function deleteNote(note: INote): INote {
+    return {};
 }
 
-export function connect(dbFilePath: string) {
-
+export function connect(dbFilePath: string): Connection {
+    return {};
 }
