@@ -1,3 +1,5 @@
+// @ts-check
+
 const APPLICATION_NAME = 'clinote';
 const SUPPORTED_OS = [
     'Linux',

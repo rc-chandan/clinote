@@ -1,5 +1,7 @@
+// @ts-check
+
 const os = require('os');
-const clinoteDB = require('./database');
+import * as clinoteDB from '../database';
 
 const { checkOSSupport, getConfiguration } = require('../utils');
 
@@ -12,6 +14,7 @@ async function initiateSession() {
 
 function startApp({ dbFilePath }) {
     clinoteDB.connect(dbFilePath);
+    // cliUtil.attachEventListners(eventListners)
 }
 
 function encrypt(passphrase) {
