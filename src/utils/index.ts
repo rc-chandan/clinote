@@ -28,13 +28,12 @@ async function createCofigForUser(
   return configObj;
 }
 
-export function checkOSSupport(): void {
-  if (SUPPORTED_OS.indexOf(os.type()) !== -1) {
-    return;
+export function checkOSSupport(osType = os.type()): boolean {
+  if (SUPPORTED_OS.indexOf(osType) !== -1) {
+    return true;
   }
-  throw new Error(
-    `${os.type()} is not supported by ${APPLICATION_NAME}, supported OS list: ${SUPPORTED_OS}`,
-  );
+  throw new Error(`${osType} is not supported by ${APPLICATION_NAME},` + 
+  `supported OS list: ${SUPPORTED_OS}`);
 }
 
 export async function getConfiguration(

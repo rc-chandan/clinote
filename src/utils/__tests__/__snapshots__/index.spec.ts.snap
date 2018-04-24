@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Supported OS types should be linux, macos and windows only clinote should throw error for unknown os type 1`] = `[Error: windows_mobile is not supported by clinote,supported OS list: Linux,Darwin,Windows_NT]`;
