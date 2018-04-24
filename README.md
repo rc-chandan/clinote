@@ -29,3 +29,6 @@
     - ctrl+n to create a new note.
     - ctrl+c to exit
     ```
+
+# Design
+1. [Flowcharts](docs/design.md)
