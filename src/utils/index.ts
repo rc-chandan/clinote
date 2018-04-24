@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-import * as os from 'os';
 import * as path from 'path';
 
 const mkdirp = require('mkdirp-promise');
@@ -28,7 +27,7 @@ async function createCofigForUser(
   return configObj;
 }
 
-export function checkOSSupport(osType = os.type()): boolean {
+export function checkOSSupport(osType: string): boolean {
   if (SUPPORTED_OS.indexOf(osType) !== -1) {
     return true;
   }

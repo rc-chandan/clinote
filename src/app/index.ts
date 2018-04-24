@@ -5,7 +5,7 @@ import events from '../events';
 import { checkOSSupport, getConfiguration, IConfig } from '../utils/index';
 
 export async function initiateSession() {
-  checkOSSupport();
+  checkOSSupport(os.type());
   const { uid, homedir } = os.userInfo();
   const config = await getConfiguration(uid, homedir);
   startApp(config);
