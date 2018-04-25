@@ -9,13 +9,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run test && tsc",
     "clean": "rimraf build",
+    "build": "npm run clean && npm run test && tsc",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
-    "precommit": "npm run build",
     "test": "npm run lint && jest",
-    "watch": "npm run build -- --watch",
-    "watch:test": "npm run test -- --watch"
+    "precommmit": "npm run lint",
+    "prepush": "npm run test"
   },
   "dependencies": {
     "inquirer": "^5.2.0",
