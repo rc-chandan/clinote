@@ -2,7 +2,7 @@ import * as os from 'os';
 
 import eventTypes from '../events/eventTypes';
 import events from '../events';
-import { checkOSSupport, getConfiguration, IConfig } from '../utils/index';
+import { checkOSSupport, getConfiguration, IConfig } from '../utils';
 
 export async function initiateSession() {
   checkOSSupport(os.type());

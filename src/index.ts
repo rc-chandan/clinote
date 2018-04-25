@@ -1,4 +1,4 @@
-import { initiateSession } from './app/index';
+import { initiateSession } from './app';
 
 const BANNER_TEXT: string =
   ' ██████╗██╗     ██╗███╗   ██╗ ██████╗ ████████╗███████╗ \n' +
