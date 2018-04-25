@@ -13,7 +13,7 @@
     "build": "npm run clean && npm run test && tsc",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "test": "npm run lint && jest",
-    "precommmit": "npm run lint",
+    "precommit": "npm run lint",
     "prepush": "npm run test"
   },
   "dependencies": {
