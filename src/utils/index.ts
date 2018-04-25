@@ -27,7 +27,7 @@ async function createCofigForUser(
   return configObj;
 }
 
-export function checkOSSupport(osType: string): boolean {
+export function checkOsSupport(osType: string): boolean {
   if (SUPPORTED_OS.indexOf(osType) !== -1) {
     return true;
   }

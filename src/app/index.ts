@@ -2,10 +2,10 @@ import * as os from 'os';
 
 import eventTypes from '../events/eventTypes';
 import events from '../events';
-import { checkOSSupport, getConfiguration, IConfig } from '../utils';
+import { checkOsSupport, getConfiguration, IConfig } from '../utils';
 
 export async function initiateSession() {
-  checkOSSupport(os.type());
+  checkOsSupport(os.type());
   const { uid, homedir } = os.userInfo();
   const config = await getConfiguration(uid, homedir);
   startApp(config);
