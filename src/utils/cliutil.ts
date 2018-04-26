@@ -8,7 +8,7 @@ const prompt = inquirer.createPromptModule();
  * Gets encryption config from user on first application run
  */
 export async function getEncryptionDetails() {
-  const questionEncryption: Iuestion = {
+  const questionEncryption: IQuestion = {
     message: 'Do you want to enable encryption',
     name: 'questionEncryption',
     type: 'confirm',
