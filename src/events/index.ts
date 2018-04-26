@@ -1,5 +1,6 @@
 import * as EventEmitter from 'events';
 import eventTypes from './eventTypes';
+import { INote } from '../types';
 
 const emitter = new EventEmitter();
 

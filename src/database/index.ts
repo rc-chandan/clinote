@@ -1,3 +1,11 @@
+import { IConfig, IConnection } from '../types';
+
+export default function getConnection(config: IConfig): IConnection {
+  return {
+    url: 'database url',
+  };
+}
+
 // export function getAllNotesForUser(uid: number): INote[] {
 //   return [];
 // }

@@ -1,19 +1,14 @@
 import * as inquirer from 'inquirer';
+import { IQuestion } from '../types';
 
 const prompt = inquirer.createPromptModule();
-
-interface IQuestion {
-  message: string;
-  name: string;
-  type: string;
-}
 
 /**
  * @public
  * Gets encryption config from user on first application run
  */
 export async function getEncryptionDetails() {
-  const questionEncryption: IQuestion = {
+  const questionEncryption: Iuestion = {
     message: 'Do you want to enable encryption',
     name: 'questionEncryption',
     type: 'confirm',

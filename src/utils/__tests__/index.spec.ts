@@ -1,7 +1,6 @@
 import { checkOsSupport } from '../';
 
 describe('Supported OS types should be linux, macos and windows only', () => {
-  
   test('app should support Darwin', () => {
     expect(checkOsSupport('Darwin')).toBe(true);
   });
@@ -21,5 +20,4 @@ describe('Supported OS types should be linux, macos and windows only', () => {
       expect(error).toMatchSnapshot();
     }
   });
-
 });

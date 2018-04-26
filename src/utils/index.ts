@@ -5,13 +5,7 @@ const mkdirp = require('mkdirp-promise');
 
 import { APPLICATION_NAME, SUPPORTED_OS } from '../constants';
 import { getEncryptionDetails } from './cliutil';
-
-export interface IConfig {
-  uid: number;
-  encrypt: boolean;
-  passphrase: string;
-  dbFilePath: string;
-}
+import { IConfig } from '../types';
 
 async function createCofigForUser(
   uid: number,
@@ -31,8 +25,11 @@ export function checkOsSupport(osType: string): boolean {
   if (SUPPORTED_OS.indexOf(osType) !== -1) {
     return true;
   }
-  throw new Error(`${osType} is not supported by ${APPLICATION_NAME},` + 
-  `supported OS list: ${SUPPORTED_OS}`);
+
+  throw new Error(
+    `${osType} is not supported by ${APPLICATION_NAME},` +
+      `supported OS list: ${SUPPORTED_OS}`,
+  );
 }
 
 export async function getConfiguration(
