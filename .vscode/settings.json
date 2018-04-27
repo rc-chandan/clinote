@@ -1,7 +1,10 @@
 {
-  "editor.formatOnSave": true,
-  "editor.wordWrap": "on",
+  // tslint
   "tslint.autoFixOnSave": true,
+
+  // prettier
+  "editor.formatOnSave": true,
+  "prettier.bracketSpacing": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all"
 }
