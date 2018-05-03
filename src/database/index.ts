@@ -1,9 +1,17 @@
-import { IConfig, IConnection } from '../types';
+import * as Sequelize from 'sequelize';
 
-export default function getConnection(config: IConfig): IConnection {
-  return {
-    url: 'database url',
-  };
+export function getConnection(dbFilePath: string): Sequelize.Sequelize {
+  const sequelize = new Sequelize('clinote', '', '', {
+    dialect: 'sqlite',
+    storage: dbFilePath,
+  });
+
+  sequelize
+    .authenticate()
+    .then(connection => console.info('authenticated'))
+    .catch(error => console.error(error));
+
+  return sequelize;
 }
 
 // export function getAllNotesForUser(uid: number): INote[] {

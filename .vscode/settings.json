@@ -6,5 +6,8 @@
   "editor.formatOnSave": true,
   "prettier.bracketSpacing": true,
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "all",
+
+  // indentation
+  "editor.tabSize": 2
 }

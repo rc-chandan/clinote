@@ -14,6 +14,7 @@ async function createCofigForUser(
   const { encrypt, passphrase } = await getEncryptionDetails();
   const configFileDir = path.dirname(configFile);
   const dbFilePath = `${configFileDir}/notes_${uid}.db`;
+  // TODO: find an alternative for mkdirp-promise, it is not that popular
   await mkdirp(configFileDir);
   fs.writeFileSync(dbFilePath, `${APPLICATION_NAME} database file`);
   const configObj = { uid, encrypt, passphrase, dbFilePath };

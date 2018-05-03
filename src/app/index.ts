@@ -3,7 +3,9 @@ import * as os from 'os';
 import eventTypes from '../events/eventTypes';
 import events from '../events';
 import { checkOsSupport, getConfiguration } from '../utils';
+import { getConnection } from '../database';
 import { IConfig } from '../types';
+import { Sequelize } from 'sequelize';
 
 export async function initiateSession() {
   checkOsSupport(os.type());
@@ -13,9 +15,5 @@ export async function initiateSession() {
 }
 
 function startApp({ dbFilePath }: IConfig) {
-  events.emit(eventTypes.GET_ALL_NOTES);
-}
-
-function encrypt(passphrase: string) {
-  // encreypt the database here.
+  const connection: Sequelize = getConnection(dbFilePath);
 }

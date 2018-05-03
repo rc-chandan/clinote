@@ -11,14 +11,17 @@ export interface IQuestion {
   type: string;
 }
 
-export interface INote {
-  titile: string;
-  description: string;
-  tags: string[];
-  createionDate: Date;
-  updationDate: Date;
+export enum NoteStatus {
+  LIVE,
+  COMPLETED,
+  ARCHIVED,
 }
 
-export interface IConnection {
-  url: string;
+export interface INote {
+  id?: string;
+  content: string;
+  tags: string[];
+  status?: NoteStatus;
+  createionDate?: Date;
+  updationDate?: Date;
 }

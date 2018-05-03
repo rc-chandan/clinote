@@ -4,7 +4,9 @@
   "description": "Command line note taking app for productivity",
   "main": "src/index.js",
   "author": "Chandan Rana (https://github.com/rc-chandan)",
-  "contributors": ["Chandan Rana (https://twitter.com/rc_chandan316)"],
+  "contributors": [
+    "Chandan Rana (https://twitter.com/rc_chandan316)"
+  ],
   "license": "MIT",
   "scripts": {
     "clean": "rimraf build",
@@ -13,9 +15,11 @@
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "test": "npm run lint && jest",
     "precommit": "npm run lint",
-    "prepush": "npm run build"
+    "prepush": "npm run build",
+    "coverage": "npm run test && codecov"
   },
   "dependencies": {
+    "figlet": "^1.2.0",
     "inquirer": "^5.2.0",
     "lodash": "^4.17.5",
     "mkdirp-promise": "^5.0.1",
@@ -28,6 +32,7 @@
     "@types/jest": "^22.2.3",
     "@types/lodash": "^4.14.107",
     "@types/node": "^9.6.6",
+    "@types/sequelize": "^4.27.16",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
     "ts-jest": "^22.4.4",
