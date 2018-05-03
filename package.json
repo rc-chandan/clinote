@@ -4,13 +4,12 @@
   "description": "Command line note taking app for productivity",
   "main": "src/index.js",
   "author": "Chandan Rana (https://github.com/rc-chandan)",
-  "contributors": [
-    "Chandan Rana (https://twitter.com/rc_chandan316)"
-  ],
+  "contributors": ["Chandan Rana (https://twitter.com/rc_chandan316)"],
   "license": "MIT",
   "scripts": {
     "clean": "rimraf build",
-    "build": "npm run clean && npm run test && tsc",
+    "build": "npm run test && tsc",
+    "build:watch": "npm run test && tsc -w",
     "cnote": "node build/index.js",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "test": "npm run lint && jest",
