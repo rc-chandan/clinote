@@ -1,17 +1,15 @@
 import * as Sequelize from 'sequelize';
 
+export let DB: Sequelize.Sequelize;
+
+// establish a db connection to given sqlite db file path
 export function getConnection(dbFilePath: string): Sequelize.Sequelize {
-  const sequelize = new Sequelize('clinote', '', '', {
+  const connection = new Sequelize('clinote', '', '', {
     dialect: 'sqlite',
     storage: dbFilePath,
   });
-
-  sequelize
-    .authenticate()
-    .then(connection => console.info('authenticated'))
-    .catch(error => console.error(error));
-
-  return sequelize;
+  DB = connection;
+  return DB;
 }
 
 // export function getAllNotesForUser(uid: number): INote[] {
@@ -31,9 +29,5 @@ export function getConnection(dbFilePath: string): Sequelize.Sequelize {
 // }
 
 // export function deleteNote(note: INote): INote {
-//   return {};
-// }
-
-// export function connect(dbFilePath: string): Connection {
 //   return {};
 // }

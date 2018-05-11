@@ -1,7 +1,23 @@
+import { DB } from '../';
 import * as Sequelize from 'sequelize';
 
-import { NoteStatus, INote } from '../../types';
+enum NoteStatus {
+  LIVE,
+  COMPLETED,
+  ARCHIVED,
+}
 
-type NoteInstance = Sequelize.Instance<INote> & INote;
-function createNoteModel(sequelize: Sequelize.Sequelize) {}
-export default createNoteModel;
+interface NoteAttributes {
+  id?: string;
+  content: string;
+  tags: string[];
+  status?: NoteStatus;
+  createionDate?: Date;
+  updationDate?: Date;
+}
+
+interface NoteInstance extends Sequelize.Instance<NoteAttributes> {
+  dataValues: NoteAttributes;
+}
+
+const notes = DB.define('note', {});

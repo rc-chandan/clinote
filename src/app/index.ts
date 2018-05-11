@@ -7,13 +7,14 @@ import { getConnection } from '../database';
 import { IConfig } from '../types';
 import { Sequelize } from 'sequelize';
 
-export async function initiateSession() {
+export async function startApp() {
   checkOsSupport(os.type());
   const { uid, homedir } = os.userInfo();
   const config = await getConfiguration(uid, homedir);
-  startApp(config);
+  run(config);
 }
 
-function startApp({ dbFilePath }: IConfig) {
-  const connection: Sequelize = getConnection(dbFilePath);
+function run({ dbFilePath }: IConfig) {
+  const db = getConnection(dbFilePath);
+  db.sync();
 }
