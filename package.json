@@ -6,6 +6,13 @@
   "author": "Chandan Rana (https://github.com/rc-chandan)",
   "contributors": ["Chandan Rana (https://twitter.com/rc_chandan316)"],
   "license": "MIT",
+  "keywords": [
+    "productivity",
+    "clinote",
+    "command line note taking app",
+    "terminal plugin",
+    "TODOs manager"
+  ],
   "scripts": {
     "clean": "rimraf build",
     "build": "npm run test && tsc",
